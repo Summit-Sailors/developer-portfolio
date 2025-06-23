@@ -1,0 +1,12 @@
+[package]
+name = "jeremy-meek-portfolio-dioxus"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+dioxus = { version = "0.5", features = ["web", "router"] }
+log = "0.4.21"
+wasm-logger = "0.2.0"
+
+# For web-sys features if needed directly, though Dioxus often abstracts them
+# web-sys = { version = "0.3.69", features = ["HtmlElement"] }

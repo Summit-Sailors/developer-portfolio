@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root variables are not directly used by Tailwind v3 in this way for theming.
+   Colors are defined in tailwind.config.js.
+   The body background gradient is applied directly using Tailwind classes or custom CSS if needed.
+*/
+
+/* Apply base body styles if not handled by Tailwind's preflight and theme */
+body {
+  @apply bg-gradient-to-b from-zinc-900 to-black text-white min-h-screen flex flex-col font-sans;
+}
+
+/* Animation delay utilities - can be generated with a loop in a real project if many are needed */
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+.animation-delay-500 {
+  animation-delay: 500ms;
+}
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Keyframes are defined in tailwind.config.js and applied via animation utilities like animate-blob */
