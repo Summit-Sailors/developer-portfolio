@@ -18,7 +18,7 @@ ENV PATH="/.cargo/bin:$PATH"
 COPY --from=planner /app/recipe.json recipe.json
 RUN cargo chef cook --release --recipe-path recipe.json
 COPY . .
-RUN dx bundle --package app --platform web
+RUN dx bundle --package app --platform web --profile release
   
 FROM chef AS runtime
 COPY --from=builder /app/target/dx/app/release/web/ /usr/local/app/app/
