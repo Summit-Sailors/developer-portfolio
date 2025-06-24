@@ -18,7 +18,7 @@ ENV PATH="/.cargo/bin:$PATH"
 COPY --from=planner /app/recipe.json recipe.json
 RUN cargo chef cook --release --recipe-path recipe.json
 COPY . .
-RUN dx bundle --package app --platform web --profile release
+RUN dx bundle --package app --platform web --release
   
 FROM chef AS runtime
 COPY --from=builder /app/target/dx/app/release/web/ /usr/local/app/
@@ -26,3 +26,4 @@ ENV PORT=8080
 ENV IP=0.0.0.0
 EXPOSE 8080
 WORKDIR /usr/local/app
+ENTRYPOINT "/usr/local/app/app"

@@ -3,7 +3,8 @@ use app::Route;
 use dioxus::prelude::*;
 
 fn main() {
-	launch(App);
+	dioxus::logger::initialize_default();
+	dioxus::LaunchBuilder::new().launch(App);
 }
 
 #[cfg(not(debug_assertions))]
