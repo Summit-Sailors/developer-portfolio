@@ -1,6 +1,7 @@
 [application]
 
 [web.app]
+asset_dir = "assets"
 title = "Jeremy Meek | Software Developer"
 
 [web.watcher]
