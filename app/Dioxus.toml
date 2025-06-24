@@ -1,0 +1,17 @@
+[application]
+
+[web.app]
+asset_dir = "assets"
+title = "Jeremy Meek | Software Developer"
+
+[web.watcher]
+reload_html = true                                      #
+watch_path = ["assets", "build.rs", "input.css", "src"]
+
+
+[web.resource]
+script = []
+style = []
+
+[web.resource.dev]
+script = []

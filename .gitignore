@@ -8,7 +8,7 @@
 
 # trunk output folder
 dist
-app
+
 
 # Rust compile target directories:
 target
@@ -73,7 +73,6 @@ yarn-error.log*
 
 # compiled output
 /dist
-/app
 /node_modules
 
 # Logs
@@ -179,4 +178,4 @@ cython_debug/
 # Added by cargo
 
 /target
-**/app/
+
