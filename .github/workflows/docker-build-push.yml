@@ -1,4 +1,4 @@
-name: Build and Push to Unraid Registry
+name: Build and Push Docker Image to Unraid Registry
 
 on:
   push:
