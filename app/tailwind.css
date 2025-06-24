@@ -1,6 +1,19 @@
 @import "tailwindcss";
 
 @layer base {
+  html,
+  body,
+  #main {
+    height: 100%;
+    margin: 0;
+    font-family: "Inter", sans-serif; /* Apply Inter font */
+  }
+
+  main.flex-grow {
+    /* Ensure main content area can grow */
+    flex: 1 0 auto;
+  }
+
   html {
     @apply scroll-smooth;
   }
@@ -19,6 +32,8 @@
       black
     );
     @apply text-white min-h-screen flex flex-col font-sans;
+    display: flex;
+    flex-direction: column;
   }
 
   :root {

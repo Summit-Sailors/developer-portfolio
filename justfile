@@ -19,8 +19,3 @@ clear:
   cargo clean
   rm *.lock
 
-tailwind:
-  #!/usr/bin/env bash
-  set -euo pipefail
-  cd ./app/
-  npx @tailwindcss/cli -i input.css -o assets/output.css --watch

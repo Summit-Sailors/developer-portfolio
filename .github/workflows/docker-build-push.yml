@@ -22,7 +22,7 @@ jobs:
             echo ""
           } > .env
       - name: Build Docker image
-        run: docker build --no-cache -t ${{ env.IMAGE_URL}}:${{ github.sha }} .
+        run: docker build -t ${{ env.IMAGE_URL}}:${{ github.sha }} .
       - name: Tag Docker image as latest
         run: docker tag ${{ env.IMAGE_URL}}:${{ github.sha }} ${{ env.IMAGE_URL}}:latest
       - name: Login to Docker registry

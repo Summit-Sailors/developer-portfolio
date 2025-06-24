@@ -1,43 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- The Dioxus.toml title will be used, or you can set it here -->
-    <!-- <title>Jeremy Meek | Software Developer</title> -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- The Dioxus.toml title will be used, or you can set it here -->
+  <!-- <title>Jeremy Meek | Software Developer</title> -->
 
-    <!-- Link to the Inter font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Link to the Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-    <!-- Link to your compiled Tailwind CSS -->
-    <link rel="stylesheet" href="dist/output.css">
-    <style>
-      /* Ensure body takes full height for gradient */
-      html, body, #main {
-        height: 100%;
-        margin: 0;
-        font-family: 'Inter', sans-serif; /* Apply Inter font */
-      }
-      body {
-        display: flex;
-        flex-direction: column;
-      }
-      main.flex-grow { /* Ensure main content area can grow */
-        flex: 1 0 auto;
-      }
-    </style>
+
 </head>
+
 <body>
-    <!-- Dioxus will mount your app here -->
-    <div id="main"></div>
-    <!-- Include your Dioxus app -->
-    <script type="module">
-        import init from "./pkg/jeremy_meek_portfolio_dioxus.js";
-        init("./pkg/jeremy_meek_portfolio_dioxus_bg.wasm").then(() => {
-          console.log("Dioxus app initialized");
-        });
-    </script>
+  <!-- Dioxus will mount your app here -->
+  <div id="main"></div>
+  <!-- Include your Dioxus app -->
+  <script type="module">
+    import init from "./pkg/jeremy_meek_portfolio_dioxus.js";
+    init("./pkg/jeremy_meek_portfolio_dioxus_bg.wasm").then(() => {
+      console.log("Dioxus app initialized");
+    });
+  </script>
 </body>
+
 </html>
