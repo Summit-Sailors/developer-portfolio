@@ -2,6 +2,8 @@ use dioxus::prelude::*;
 
 use crate::layout::SectionTitle;
 
+const PLACEHOLDER: Asset = asset!("/assets/placeholder.svg", ImageAssetOptions::new().with_size(ImageSize::Manual { width: 256, height: 256 }));
+
 #[component]
 pub fn StoryPage() -> Element {
 	rsx! {
@@ -15,7 +17,7 @@ pub fn StoryPage() -> Element {
 								div { class: "absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 blur-xl opacity-30 animate-pulse-slow" }
 								div { class: "relative w-full h-full rounded-full overflow-hidden border-4 border-zinc-800",
 									img {
-										src: "/placeholder.svg?height=256&width=256",
+										src: PLACEHOLDER,
 										alt: "Jeremy Meek",
 										class: "object-cover w-full h-full",
 									}

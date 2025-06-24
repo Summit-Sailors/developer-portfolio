@@ -12,6 +12,7 @@ use dioxus_router::prelude::Link;
 use crate::{layout::SectionTitle, router::Route};
 
 const HEADSHOT: Asset = asset!("/assets/headshot.png");
+const PLACEHOLDER: Asset = asset!("/assets/placeholder.svg", ImageAssetOptions::new().with_size(ImageSize::Manual { width: 600, height: 350 }));
 
 #[component]
 pub fn HomePage() -> Element {
@@ -89,7 +90,7 @@ pub fn HomePage() -> Element {
 						style: "animation-delay: 0ms;",
 						div { class: "relative overflow-hidden rounded-lg border border-zinc-800 group-hover:border-purple-500 transition-colors",
 							img {
-								src: "/placeholder.svg?height=350&width=600",
+								src: PLACEHOLDER,
 								alt: "EZPZ Polars Plugin Helper",
 								class: "w-full h-64 object-cover transition-transform group-hover:scale-105",
 							}
@@ -113,7 +114,7 @@ pub fn HomePage() -> Element {
 						style: "animation-delay: 100ms;",
 						div { class: "relative overflow-hidden rounded-lg border border-zinc-800 group-hover:border-purple-500 transition-colors",
 							img {
-								src: "/placeholder.svg?height=350&width=600",
+								src: PLACEHOLDER,
 								alt: "Lionheart Painting Website",
 								class: "w-full h-64 object-cover transition-transform group-hover:scale-105",
 							}

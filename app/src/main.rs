@@ -6,13 +6,21 @@ fn main() {
 	launch(App);
 }
 
+#[cfg(not(debug_assertions))]
 const MATOMO_SCRIPT: Asset = asset!("/assets/matomo_tag.js");
 const FAVICON: Asset = asset!("/assets/favicon.png");
 const TAILWIND: Asset = asset!("/assets/tailwind.css");
 
 fn App() -> Element {
 	rsx! {
-		document::Script { src: MATOMO_SCRIPT }
+		{
+				#[cfg(not(debug_assertions))]
+				{
+						rsx! {
+							document::Script { src: MATOMO_SCRIPT }
+						}
+				}
+		}
 		document::Link { rel: "icon", href: FAVICON }
 		document::Meta {
 			name: "description",

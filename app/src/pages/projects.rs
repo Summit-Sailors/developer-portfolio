@@ -1,4 +1,3 @@
-
 use dioxus::prelude::*;
 use dioxus_free_icons::{
 	Icon,
@@ -6,6 +5,8 @@ use dioxus_free_icons::{
 };
 
 use crate::layout::SectionTitle;
+
+const PLACEHOLDER: Asset = asset!("/assets/placeholder.svg", ImageAssetOptions::new().with_size(ImageSize::Manual { width: 400, height: 224 }));
 
 #[component]
 pub fn ProjectsPage() -> Element {
@@ -23,7 +24,7 @@ pub fn ProjectsPage() -> Element {
 						style: "animation-delay: 0ms;",
 						div { class: "relative w-full h-56",
 							img {
-								src: "/placeholder.svg?height=224&width=400",
+								src: PLACEHOLDER,
 								alt: "EZPZ Polars Plugin Helper",
 								class: "object-cover w-full h-full transition-transform group-hover:scale-105 duration-300",
 							}
@@ -94,7 +95,7 @@ pub fn ProjectsPage() -> Element {
 						style: "animation-delay: 100ms;",
 						div { class: "relative w-full h-56",
 							img {
-								src: "/placeholder.svg?height=224&width=400",
+								src: PLACEHOLDER,
 								alt: "Lionheart Painting Website",
 								class: "object-cover w-full h-full transition-transform group-hover:scale-105 duration-300",
 							}
@@ -163,7 +164,7 @@ pub fn ProjectsPage() -> Element {
 						style: "animation-delay: 200ms;",
 						div { class: "relative w-full h-56",
 							img {
-								src: "/placeholder.svg?height=224&width=400",
+								src: PLACEHOLDER,
 								alt: "E-commerce Platform (Example)",
 								class: "object-cover w-full h-full transition-transform group-hover:scale-105 duration-300",
 							}
@@ -215,7 +216,7 @@ pub fn ProjectsPage() -> Element {
 						style: "animation-delay: 300ms;",
 						div { class: "relative w-full h-56",
 							img {
-								src: "/placeholder.svg?height=224&width=400",
+								src: PLACEHOLDER,
 								alt: "Task Management App (Example)",
 								class: "object-cover w-full h-full transition-transform group-hover:scale-105 duration-300",
 							}
