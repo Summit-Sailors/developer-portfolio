@@ -39,7 +39,7 @@ inherits = "dev"
 [workspace.dependencies]
 anyhow = "1.0.98"
 dioxus = { version = "0.7.0-alpha.1", default-features = false }
-dioxus-free-icons = { path = "../dioxus-free-icons/packages/lib", features = [
+dioxus-free-icons = { git = "https://github.com/Distortedlogic/dioxus-free-icons.git", features = [
   "bootstrap",
   "feather",
   "font-awesome-brands",
