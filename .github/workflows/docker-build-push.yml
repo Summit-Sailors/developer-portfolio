@@ -14,6 +14,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Create .env file
+        run: |
+          {
+            echo ""
+            echo ""
+          } > .env
       - name: Build Docker image
         run: |
           docker build -t ${{ secrets.REGISTRY_HOST_PORT }}/developer-portfolio-${{ github.ref_name }}:${{ github.sha }} .
