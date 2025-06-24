@@ -16,7 +16,7 @@ RUN cargo chef cook --release --recipe-path recipe.json
 
 COPY . .
 
-RUN dx bundle  --release --package app --platform web
+RUN dx bundle --package app --platform web
   
 FROM chef AS runtime
 COPY --from=builder /app/target/dx/app/release/web/ /usr/local/app/app/
