@@ -11,8 +11,8 @@ use dioxus_router::prelude::Link;
 
 use crate::{layout::SectionTitle, router::Route};
 
-const HEADSHOT: Asset = asset!("/assets/headshot.png");
-const PLACEHOLDER: Asset = asset!("/assets/placeholder.svg", ImageAssetOptions::new().with_size(ImageSize::Manual { width: 600, height: 350 }));
+static HEADSHOT: Asset = asset!("/assets/headshot.png");
+static PLACEHOLDER: Asset = asset!("/assets/placeholder.svg", ImageAssetOptions::new().with_size(ImageSize::Manual { width: 600, height: 350 }));
 
 #[component]
 pub fn HomePage() -> Element {

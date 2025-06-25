@@ -3,14 +3,13 @@ use app::Route;
 use dioxus::prelude::*;
 
 fn main() {
-	dioxus::logger::initialize_default();
 	dioxus::LaunchBuilder::new().launch(App);
 }
 
 #[cfg(not(debug_assertions))]
-const MATOMO_SCRIPT: Asset = asset!("/assets/matomo_tag.js");
-const FAVICON: Asset = asset!("/assets/favicon.png");
-const TAILWIND: Asset = asset!("/assets/tailwind.css");
+static MATOMO_SCRIPT: Asset = asset!("/assets/matomo_tag.js");
+static FAVICON: Asset = asset!("/assets/favicon.png");
+static TAILWIND: Asset = asset!("/assets/tailwind.css");
 
 fn App() -> Element {
 	rsx! {
