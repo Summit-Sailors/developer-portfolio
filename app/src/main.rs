@@ -7,20 +7,20 @@ fn main() {
 }
 
 #[cfg(not(debug_assertions))]
-static MATOMO_SCRIPT: Asset = asset!("/assets/matomo_tag.js");
-static FAVICON: Asset = asset!("/assets/favicon.png");
-static TAILWIND: Asset = asset!("/assets/tailwind.css");
+static MATOMO_SCRIPT: Asset = asset!("/assets/matomo_tag.js", JsAssetOptions::new().into_asset_options());
+static FAVICON: Asset = asset!("/assets/favicon.png", ImageAssetOptions::new().into_asset_options());
+static TAILWIND: Asset = asset!("/assets/tailwind.css", CssAssetOptions::new().into_asset_options());
 
 fn App() -> Element {
 	rsx! {
-		{
-				#[cfg(not(debug_assertions))]
-				{
-						rsx! {
-							document::Script { src: MATOMO_SCRIPT }
-						}
-				}
-		}
+		// {
+		// 		#[cfg(not(debug_assertions))]
+		// 		{
+		// 				rsx! {
+		// 					document::Script { src: MATOMO_SCRIPT }
+		// 				}
+		// 		}
+		// }
 		document::Link { rel: "icon", href: FAVICON }
 		document::Meta {
 			name: "description",

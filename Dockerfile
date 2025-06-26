@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 ENV CARGO_HOME=/usr/local/cargo
 ENV RUSTUP_HOME=/usr/local/rustup
 ENV PATH=$CARGO_HOME/bin:$PATH
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain 1.87.0 --profile minimal
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable --profile minimal
 RUN . $CARGO_HOME/env
 RUN cargo install cargo-chef cargo-binstall
 WORKDIR /dioxus-app
@@ -24,12 +24,13 @@ COPY . .
 RUN cargo chef prepare --recipe-path recipe.json
   
 FROM chef AS builder
-RUN cargo binstall dioxus-cli@0.7.0-alpha.1 -y --root $CARGO_HOME
+RUN git clone https://github.com/DioxusLabs/dioxus.git
+RUN cargo install --path ./dioxus/packages/cli --force
 
 COPY --from=planner /dioxus-app/recipe.json recipe.json
 RUN cargo chef cook --release --recipe-path recipe.json
 COPY . .
-RUN dx bundle -p app
+RUN dx bundle -p app --release --trace --verbose
   
 FROM chef AS runtime
 COPY --from=builder /dioxus-app/dist/ /usr/local/web/

@@ -6,7 +6,8 @@ use dioxus_free_icons::{
 
 use crate::layout::SectionTitle;
 
-static PLACEHOLDER: Asset = asset!("/assets/placeholder.svg", ImageAssetOptions::new().with_size(ImageSize::Manual { width: 400, height: 224 }));
+static PLACEHOLDER: Asset =
+	asset!("/assets/placeholder.svg", ImageAssetOptions::new().with_size(ImageSize::Manual { width: 400, height: 224 }).into_asset_options());
 
 #[component]
 pub fn ProjectsPage() -> Element {
