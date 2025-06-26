@@ -1,7 +1,7 @@
 
 use dioxus::prelude::*;
 
-#[derive(Props, PartialEq, Clone)]
+#[derive(Clone, PartialEq, Props)]
 pub struct SectionTitleProps {
 	title: String,
 	#[props(default)]

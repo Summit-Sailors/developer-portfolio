@@ -13,14 +13,14 @@ static TAILWIND: Asset = asset!("/assets/tailwind.css", CssAssetOptions::new().i
 
 fn App() -> Element {
 	rsx! {
-		// {
-		// 		#[cfg(not(debug_assertions))]
-		// 		{
-		// 				rsx! {
-		// 					document::Script { src: MATOMO_SCRIPT }
-		// 				}
-		// 		}
-		// }
+		{
+				#[cfg(not(debug_assertions))]
+				{
+						rsx! {
+							document::Script { src: MATOMO_SCRIPT }
+						}
+				}
+		}
 		document::Link { rel: "icon", href: FAVICON }
 		document::Meta {
 			name: "description",

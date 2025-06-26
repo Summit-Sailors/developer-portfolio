@@ -19,3 +19,7 @@ clear:
   cargo clean
   rm *.lock
 
+run-bundled:
+  #!/usr/bin/env bash
+  set -euo pipefail
+  PORT=8080 IP=0.0.0.0 ./dist/app
