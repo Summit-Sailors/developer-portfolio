@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     libc6-dev \
     git \
+    binaryen \
     && rm -rf /var/lib/apt/lists/*
 ENV CARGO_HOME=/usr/local/cargo
 ENV RUSTUP_HOME=/usr/local/rustup
@@ -15,7 +16,7 @@ ENV PATH=$CARGO_HOME/bin:$PATH
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable --profile minimal
 RUN . $CARGO_HOME/env
 RUN rustup target add wasm32-unknown-unknown
-RUN cargo install cargo-chef wasm-bindgen-cli@0.2.100
+RUN cargo install cargo-chef wasm-bindgen-cli@0.2.100 wasm-pack
 WORKDIR /dioxus-app
   
 FROM chef AS planner
