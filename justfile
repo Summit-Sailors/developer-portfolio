@@ -17,7 +17,7 @@ clear:
 install-dx:
   #!/usr/bin/env bash
   set -euo pipefail
-  cargo install --git https://github.com/DioxusLabs/dioxus.git dioxus-cli --force
+  cargo install --git https://github.com/DioxusLabs/dioxus.git dioxus-cli --force --features no-downloads
 
 bundle:
   #!/usr/bin/env bash
