@@ -7,20 +7,12 @@ fn main() {
 }
 
 #[cfg(not(debug_assertions))]
-static MATOMO_SCRIPT: Asset = asset!("/assets/matomo_tag.js", JsAssetOptions::new().into_asset_options());
-static FAVICON: Asset = asset!("/assets/favicon.png", ImageAssetOptions::new().into_asset_options());
-static TAILWIND: Asset = asset!("/assets/tailwind.css", CssAssetOptions::new().with_preload(true));
+static MATOMO_SCRIPT: Asset = asset!("/assets/matomo_tag.js", JsAssetOptions::new().with_preload(true));
+static FAVICON: Asset = asset!("/assets/favicon.png", ImageAssetOptions::new());
+static _TAILWIND: Asset = asset!("/assets/tailwind.css", CssAssetOptions::new().with_preload(true));
 
 fn App() -> Element {
 	rsx! {
-		{
-				#[cfg(not(debug_assertions))]
-				{
-						rsx! {
-							document::Script { src: MATOMO_SCRIPT }
-						}
-				}
-		}
 		document::Link { rel: "icon", href: FAVICON }
 		document::Meta {
 			name: "description",
@@ -31,7 +23,6 @@ fn App() -> Element {
 			rel: "stylesheet",
 			href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap",
 		}
-		document::Link { rel: "stylesheet", href: TAILWIND }
 		Router::<Route> {}
 	}
 }

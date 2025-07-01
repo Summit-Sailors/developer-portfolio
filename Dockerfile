@@ -2,19 +2,17 @@ FROM ubuntu:latest AS chef
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
-    wget \
     pkg-config \
     libssl-dev \
     build-essential \
     gcc \
     libc6-dev \
-    xz-utils \
     git \
     && rm -rf /var/lib/apt/lists/*
 ENV CARGO_HOME=/usr/local/cargo
 ENV RUSTUP_HOME=/usr/local/rustup
 ENV PATH=$CARGO_HOME/bin:$PATH
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain nightly --profile minimal
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable --profile minimal
 RUN . $CARGO_HOME/env
 RUN cargo install cargo-chef
 WORKDIR /dioxus-app
