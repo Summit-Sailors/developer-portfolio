@@ -15,7 +15,7 @@ ENV PATH=$CARGO_HOME/bin:$PATH
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable --profile minimal
 RUN . $CARGO_HOME/env
 RUN rustup target add wasm32-unknown-unknown
-RUN cargo install cargo-chef
+RUN cargo install cargo-chef wasm-bindgen-cli@0.2.100
 WORKDIR /dioxus-app
   
 FROM chef AS planner
