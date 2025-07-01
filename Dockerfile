@@ -12,13 +12,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 ENV CARGO_HOME=/usr/local/cargo
 ENV RUSTUP_HOME=/usr/local/rustup
 ENV PATH=$CARGO_HOME/bin:/usr/local/bin:$PATH
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable --profile minimal
-RUN . $CARGO_HOME/env
-RUN rustup target add wasm32-unknown-unknown
-RUN cargo install cargo-chef wasm-bindgen-cli@0.2.100 wasm-pack wasm-opt
+RUN apt-get update && apt-get install -y wget tar && \
+    wget https://github.com/WebAssembly/binaryen/releases/download/version_123/binaryen-version_123-x86_64-linux.tar.gz && \
+    tar -xzf binaryen-version_123-x86_64-linux.tar.gz && \
+    mv binaryen-version_123/bin/* /usr/local/bin/
 RUN curl -LO https://github.com/tailwindlabs/tailwindcss/releases/download/v4.1.11/tailwindcss-linux-arm64 \
     && chmod +x tailwindcss-linux-arm64 \
     && mv tailwindcss-linux-arm64 /usr/local/bin/tailwindcss
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable --profile minimal
+RUN . $CARGO_HOME/env
+RUN rustup target add wasm32-unknown-unknown
+RUN cargo install cargo-chef wasm-bindgen-cli@0.2.100
+
 WORKDIR /dioxus-app
   
 FROM chef AS planner
