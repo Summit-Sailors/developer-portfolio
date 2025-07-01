@@ -9,7 +9,7 @@ fn main() {
 #[cfg(not(debug_assertions))]
 static MATOMO_SCRIPT: Asset = asset!("/assets/matomo_tag.js", JsAssetOptions::new().into_asset_options());
 static FAVICON: Asset = asset!("/assets/favicon.png", ImageAssetOptions::new().into_asset_options());
-static TAILWIND: Asset = asset!("/assets/tailwind.css", CssAssetOptions::new().into_asset_options());
+static TAILWIND: Asset = asset!("/assets/tailwind.css", CssAssetOptions::new().with_preload(true));
 
 fn App() -> Element {
 	rsx! {

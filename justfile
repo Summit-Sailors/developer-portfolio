@@ -8,16 +8,20 @@ web:
   set -euo pipefail
   dx serve --platform web -p app
 
-build:
-  #!/usr/bin/env bash
-  set -euo pipefail
-  podman-compose build app
-
 clear:
   #!/usr/bin/env bash
   set -euo pipefail
   cargo clean
   rm *.lock
+
+install-dx:
+  #!/usr/bin/env bash
+  set -euo pipefail
+  cargo install --git https://github.com/DioxusLabs/dioxus.git dioxus-cli --force
+
+bundle:
+  #!/usr/bin/env bash
+  dx bundle -p app --release --trace --verbose
 
 run-bundled:
   #!/usr/bin/env bash

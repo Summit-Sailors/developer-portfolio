@@ -23,7 +23,7 @@ incremental = false
 lto = true
 opt-level = "z"
 panic = "abort"
-strip = true
+strip = false
 
 [profile.wasm-dev]
 inherits = "dev"
@@ -38,8 +38,8 @@ inherits = "dev"
 
 [workspace.dependencies]
 anyhow = "1.0.98"
-dioxus = { git = "https://github.com/Distortedlogic/dioxus.git", branch = "asset-link-section-preservation", default-features = false }
-dioxus-free-icons = { git = "https://github.com/Distortedlogic/dioxus-free-icons.git", branch = "forked", features = [
+dioxus = { git = "https://github.com/DioxusLabs/dioxus.git", default-features = false }
+dioxus-free-icons = { git = "https://github.com/Distortedlogic/dioxus-free-icons.git", branch = "latest", features = [
   "bootstrap",
   "feather",
   "font-awesome-brands",

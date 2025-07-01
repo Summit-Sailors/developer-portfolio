@@ -24,13 +24,12 @@ COPY . .
 RUN cargo chef prepare --recipe-path recipe.json
   
 FROM chef AS builder
-RUN git clone https://github.com/Distortedlogic/dioxus.git
-RUN cargo install --path ./dioxus/packages/cli --force --root $CARGO_HOME
+RUN cargo install --git https://github.com/Distortedlogic/dioxus.git dioxus-cli --force --root $CARGO_HOME
 
 COPY --from=planner /dioxus-app/recipe.json recipe.json
 RUN cargo chef cook --release --recipe-path recipe.json
 COPY . .
-RUN dx bundle -p app --release --trace --verbose
+RUN dx bundle -p app --release
   
 FROM chef AS runtime
 COPY --from=builder /dioxus-app/dist/ /usr/local/web/
