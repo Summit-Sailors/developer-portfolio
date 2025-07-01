@@ -1,26 +1,26 @@
 #![allow(non_snake_case)]
-use app::Route;
+use developer_portfolio::Route;
 use dioxus::prelude::*;
 
 fn main() {
 	dioxus::LaunchBuilder::new().launch(App);
 }
 
-#[cfg(not(debug_assertions))]
-static MATOMO_SCRIPT: Asset = asset!("/assets/matomo_tag.js", JsAssetOptions::new());
-static FAVICON: Asset = asset!("/assets/favicon.png", ImageAssetOptions::new());
-static TAILWIND: Asset = asset!("/assets/tailwind.css", CssAssetOptions::new());
+// #[cfg(not(debug_assertions))]
+// static MATOMO_SCRIPT: Asset = asset!("/assets/matomo_tag.js", JsAssetOptions::new().into_asset_options());
+static FAVICON: Asset = asset!("/assets/favicon.png");
+static TAILWIND: Asset = asset!("/assets/tailwind.css");
 
 fn App() -> Element {
 	rsx! {
-		{
-				#[cfg(not(debug_assertions))]
-				{
-						rsx! {
-							document::Script { src: MATOMO_SCRIPT }
-						}
-				}
-		}
+		// {
+		// 		#[cfg(not(debug_assertions))]
+		// 		{
+		// 				rsx! {
+		// 					document::Script { src: MATOMO_SCRIPT }
+		// 				}
+		// 		}
+		// }
 		document::Link { rel: "icon", href: FAVICON }
 		document::Meta {
 			name: "description",

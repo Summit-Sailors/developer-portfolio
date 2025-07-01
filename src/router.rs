@@ -6,7 +6,7 @@ use super::ProjectsPage;
 use super::StoryPage;
 use dioxus::prelude::*;
 
-#[derive(Clone, PartialEq, Routable)]
+#[derive(Clone, PartialEq, Eq, Routable)]
 pub enum Route {
 	#[layout(Layout)]
 	#[route("/")]

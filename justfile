@@ -6,7 +6,7 @@ default:
 web:
   #!/usr/bin/env bash
   set -euo pipefail
-  dx serve --platform web -p app
+  dx serve
 
 clear:
   #!/usr/bin/env bash
@@ -17,11 +17,11 @@ clear:
 install-dx:
   #!/usr/bin/env bash
   set -euo pipefail
-  cargo install --git https://github.com/DioxusLabs/dioxus.git dioxus-cli --force --features no-downloads
+  cargo install --git https://github.com/DioxusLabs/dioxus.git --branch main dioxus-cli --force
 
 bundle:
   #!/usr/bin/env bash
-  dx bundle -p app --release --trace --verbose
+  dx bundle --release --trace --verbose
 
 run-bundled:
   #!/usr/bin/env bash

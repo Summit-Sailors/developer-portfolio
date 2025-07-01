@@ -11,7 +11,7 @@ use dioxus_router::prelude::Link;
 
 use crate::{layout::SectionTitle, router::Route};
 
-static HEADSHOT: Asset = asset!("/assets/headshot.png", ImageAssetOptions::new());
+static HEADSHOT: Asset = asset!("/assets/headshot.png", ImageAssetOptions::new().with_avif());
 static PLACEHOLDER: Asset = asset!("/assets/placeholder.svg", ImageAssetOptions::new().with_size(ImageSize::Manual { width: 600, height: 350 }));
 
 #[component]

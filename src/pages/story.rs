@@ -2,27 +2,21 @@ use dioxus::prelude::*;
 
 use crate::layout::SectionTitle;
 
-static PLACEHOLDER: Asset =
-	asset!("/assets/placeholder.svg", ImageAssetOptions::new().with_size(ImageSize::Manual { width: 256, height: 256 }).into_asset_options());
+// static PLACEHOLDER: Asset =
+// 	asset!("/assets/placeholder.svg", ImageAssetOptions::new().with_size(ImageSize::Manual { width: 256, height: 256 }).into_asset_options());
 
 #[component]
 pub fn StoryPage() -> Element {
 	rsx! {
 		div { class: "py-24",
 			div { class: "container mx-auto px-4",
-				SectionTitle { title: "My Story".to_string() }
+				SectionTitle { title: "My Story".to_owned() }
 				div { class: "max-w-3xl mx-auto",
 					div { class: "flex flex-col md:flex-row items-center gap-12 mb-16",
 						div { class: "md:w-1/3 animate-slide-in-left",
 							div { class: "relative size-48 md:size-64 mx-auto",
 								div { class: "absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 blur-xl opacity-30 animate-pulse-slow" }
-								div { class: "relative w-full h-full rounded-full overflow-hidden border-4 border-zinc-800",
-									img {
-										src: PLACEHOLDER,
-										alt: "Jeremy Meek",
-										class: "object-cover w-full h-full",
-									}
-								}
+								div { class: "relative w-full h-full rounded-full overflow-hidden border-4 border-zinc-800" }
 							}
 						}
 						div { class: "md:w-2/3 animate-slide-in-right text-center md:text-left",

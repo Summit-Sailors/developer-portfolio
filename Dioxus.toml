@@ -1,9 +1,9 @@
 [application]
-out_dir = "../dist"
+out_dir = "dist"
 
 [web.app]
 title = "Jeremy Meek | Software Developer"
 
 [web.watcher]
 reload_html = true
-watch_path = ["."]
+watch_path = ["assets", "src"]
