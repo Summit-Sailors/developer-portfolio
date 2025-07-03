@@ -7,3 +7,7 @@ title = "Jeremy Meek | Software Developer"
 [web.watcher]
 reload_html = true
 watch_path = ["assets", "src"]
+
+[web.wasm_opt]
+debug = false
+# extra_features = ["--disable-debuginfo"]

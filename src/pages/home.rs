@@ -9,10 +9,7 @@ use dioxus_free_icons::{
 };
 use dioxus_router::prelude::Link;
 
-use crate::{layout::SectionTitle, router::Route};
-
-static HEADSHOT: Asset = asset!("/assets/headshot.png", ImageAssetOptions::new().with_avif());
-static PLACEHOLDER: Asset = asset!("/assets/placeholder.svg", ImageAssetOptions::new().with_size(ImageSize::Manual { width: 600, height: 350 }));
+use crate::{HEADSHOT, PLACEHOLDER, layout::SectionTitle, router::Route};
 
 #[component]
 pub fn HomePage() -> Element {
@@ -83,7 +80,7 @@ pub fn HomePage() -> Element {
 		section { id: "featured-projects", class: "py-24",
 			// ... featured projects content from previous step ...
 			div { class: "container mx-auto px-4",
-				SectionTitle { title: "Featured Projects".to_string() }
+				SectionTitle { title: "Featured Projects".to_owned() }
 				div { class: "grid md:grid-cols-2 gap-8",
 					div {
 						class: "group animate-fade-in-up",
@@ -147,7 +144,7 @@ pub fn HomePage() -> Element {
 		// Skills Section - Updated with dioxus-free-icons
 		section { id: "skills", class: "py-24 bg-zinc-900/50",
 			div { class: "container mx-auto px-4",
-				SectionTitle { title: "My Skills".to_string() }
+				SectionTitle { title: "My Skills".to_owned() }
 				div { class: "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6",
 					// Skill: Rust
 					div {

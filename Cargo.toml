@@ -14,14 +14,14 @@ incremental = false
 opt-level = "z"
 strip = true
 
+
 [profile.release]
 codegen-units = 1
-debug = false
 incremental = false
 lto = true
 opt-level = "z"
 panic = "abort"
-strip = false
+# strip = false
 
 [profile.wasm-dev]
 inherits = "dev"
@@ -36,8 +36,8 @@ inherits = "dev"
 
 [dependencies]
 # anyhow = "1.0.98"
-dioxus = { git = "https://github.com/DioxusLabs/dioxus.git", features = ["fullstack", "router"] }
-dioxus-free-icons = { git = "https://github.com/Distortedlogic/dioxus-free-icons.git", branch = "latest", features = [
+dioxus = { version = "0.7.0-alpha.2", features = ["fullstack", "router"] }
+dioxus-free-icons = { git = "https://github.com/Distortedlogic/dioxus-free-icons.git", branch = "0.7.0-alpha.2", features = [
   # "bootstrap",
   "feather",
   "font-awesome-brands",

@@ -19,16 +19,16 @@ pub fn ContactPage() -> Element {
 
 	let handle_submit = move |evt: Event<FormData>| {
 		evt.prevent_default();
-		name.set("".to_string());
-		email.set("".to_string());
-		subject.set("".to_string());
-		message.set("".to_string());
+		name.set(String::new());
+		email.set(String::new());
+		subject.set(String::new());
+		message.set(String::new());
 	};
 
 	rsx! {
 		div { class: "py-24",
 			div { class: "container mx-auto px-4",
-				SectionTitle { title: "Get In Touch".to_string() }
+				SectionTitle { title: "Get In Touch".to_owned() }
 				div { class: "max-w-4xl mx-auto",
 					div { class: "bg-zinc-900 p-8 md:p-12 rounded-lg border border-zinc-800 shadow-xl animate-fade-in-up",
 						div { class: "grid md:grid-cols-2 gap-10 md:gap-16",

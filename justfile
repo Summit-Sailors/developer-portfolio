@@ -17,7 +17,7 @@ clear:
 install-dx:
   #!/usr/bin/env bash
   set -euo pipefail
-  cargo install --git https://github.com/DioxusLabs/dioxus.git --branch main dioxus-cli --force
+  cargo install dioxus-cli@0.7.0-alpha.2 --force
 
 bundle:
   #!/usr/bin/env bash
@@ -26,4 +26,4 @@ bundle:
 run-bundled:
   #!/usr/bin/env bash
   set -euo pipefail
-  PORT=8080 IP=0.0.0.0 ./dist/app
+  PORT=8080 IP=0.0.0.0 ./dist/developer-portfolio

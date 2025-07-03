@@ -2,9 +2,6 @@ use dioxus::prelude::*;
 
 use crate::layout::SectionTitle;
 
-// static PLACEHOLDER: Asset =
-// 	asset!("/assets/placeholder.svg", ImageAssetOptions::new().with_size(ImageSize::Manual { width: 256, height: 256 }).into_asset_options());
-
 #[component]
 pub fn StoryPage() -> Element {
 	rsx! {

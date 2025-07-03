@@ -2,20 +2,18 @@
 target/
 Cargo.lock
 
+
 # IDE
 .vscode/
-.idea/
+.editorconfig
+.rustfmt.toml
+clippy.toml
+justfile
+./tailwind.css
+taplo.toml
 
-# OS
-.DS_Store
-Thumbs.db
 
-# Logs
-*.log
-
-# Build artifacts
 dist/
-build/
 
 # Node modules (if any)
 node_modules/

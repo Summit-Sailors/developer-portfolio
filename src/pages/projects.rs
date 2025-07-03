@@ -4,17 +4,14 @@ use dioxus_free_icons::{
 	icons::fi_icons::{FiExternalLink, FiGithub},
 };
 
-use crate::layout::SectionTitle;
-
-static PLACEHOLDER: Asset =
-	asset!("/assets/placeholder.svg", ImageAssetOptions::new().with_size(ImageSize::Manual { width: 400, height: 224 }).into_asset_options());
+use crate::{PLACEHOLDER, layout::SectionTitle};
 
 #[component]
 pub fn ProjectsPage() -> Element {
 	rsx! {
 		div { class: "py-24",
 			div { class: "container mx-auto px-4",
-				SectionTitle { title: "My Projects".to_string() }
+				SectionTitle { title: "My Projects".to_owned() }
 				// Manually inlined projects
 				div { class: "grid md:grid-cols-2 lg:grid-cols-3 gap-10",
 
